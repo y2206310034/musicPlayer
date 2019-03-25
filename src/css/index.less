@@ -1,0 +1,147 @@
+*{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    body{
+        font-size:12px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 100%;
+        .wrapper{
+            width:100vw;
+            height:100vh;
+            padding-top:60px;
+            box-sizing: border-box;
+            background-color:rgba(0,0,0,0.2);
+            .song-img{
+                // 给padding设百分比是根据父级的宽度来的
+                // 因此可以利用这一特点实现自适应正方形
+                position: relative;
+                width:70%;
+                height:0;
+                padding-top:70%;
+                // border:1px solid black;
+                margin:0 auto;
+                .img-box{
+                    // 可以通过定位撑满整个元素
+                    position: absolute;
+                    top:0px;
+                    left:0px;
+                    right:0px;
+                    bottom:0px;
+                    border-radius: 50%;
+                    background-color:#000;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width:75%;
+                        height:75%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .song-info{
+                margin-top:20px;
+                width:100%;
+                text-align:center;
+                height:126px;
+                color:#fff;
+                // border:1px solid #000;
+                .song-name{
+                    font-size:24px;
+                    line-height:36px;
+                    margin-bottom:8px;
+                }
+
+            }
+            .pro{
+                display:flex;
+                .cur-time,.all-time{
+                    width:60px;
+                    height:40px;
+                    // border:1px solid #000;
+                    color:#fff;
+                    text-align: center;
+                    line-height:40px;
+                }
+                .pro-wrap{
+                    position: relative;
+                    flex:1;
+                    // border:1px solid #000;
+                    overflow: hidden;
+                    .pro-bottom,.pro-top{
+                        width:100%;
+                        height:1px;
+                        position: absolute;
+                        top:20px;
+                    }
+                    .pro-bottom{
+                        background-color:rgba(255,255,255,0.6);
+                    }
+                    .pro-top{
+                        background-color:#fff;
+                        transform: translateX(-100%);
+                        .spot{
+                            position: absolute;
+                            width:20px;
+                            height:20px;
+                            right:-12px;
+                            top:-10px;
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+                            &::after{
+                                content:"";
+                                display:block;
+                                width:5px;
+                                height:5px;
+                                border-radius: 50%;
+                                background-color:#fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .control{
+                width:100%;
+                height:60px;
+                position: absolute;
+                bottom:0;
+                background-color:rgba(0,0,0,0.6);
+                display:flex;
+                .btn{
+                    cursor: pointer;
+                    flex:1;
+                    height:100%;
+                    // border:1px solid #000;
+                    background-repeat: no-repeat;
+                    background-size:20px;
+                    background-position: center center;
+                }
+                .like{
+                    background-image:url("../image/icon-like.png");
+                    &.liking{
+                        background-image:url("../image/icon-like-solid.png");
+                    }
+                }
+                .prev{
+                    background-image:url("../image/icon-prev.png");
+                }
+                .next{
+                    background-image:url("../image/icon-next.png");
+                }
+                .play{
+                    background-image:url("../image/icon-play.png");
+                    &.playing{
+                        background-image:url("../image/icon-pause.png");
+                    }
+                }
+                .list{
+                    background-image:url("../image/icon-list.png");
+                }
+
+            }
+        }
+    }
+}
